@@ -342,4 +342,25 @@ const TOOLTIP_DATA = {
 export default TOOLTIP_DATA;
 ```
 
-###
+### 툴팁 컴포넌트 동작 예시
+![동작예시1번](https://github.com/catmaker/Tooltip/assets/114233139/12f4dfc6-cf56-4f98-8b9e-fe62d5277fdf)
+###### 툴팁 컴포넌트에 마우스 오버 시 툴팁이 등장 하고 마우스 아웃 시 툴팁이 기본적으로 사라집니다.
+###### 툴팁의 방향은 (`top` `left` `right` `bottom` `topLeft` `topRight` `bottomLeft` `bottomRight` `leftTop` `leftBottom` `rightTop` `rightBottom`) 이 있습니다.
+#
+
+![동작예시2번](https://github.com/catmaker/Tooltip/assets/114233139/a24656cf-4dee-412d-ad2c-ce0f7918cb0a)
+###### 툴팁 컴포넌트의 부모 요소가 scroll, hidden 일 경우에도 툴팁은 최상위권에서 등장합니다.
+#
+![동작예시3번](https://github.com/catmaker/Tooltip/assets/114233139/ca44c3db-8ba2-414d-9fdf-84a26d6f1f2f)
+###### enterDelay, leaveDelay, hoverLeave를 전달하여 툴팁이 나오는 딜레이, 
+###### 툴팁에 hover 시 사라지지 않는 기능을 커스텀하게 추가할 수 있습니다.
+#
+![동작예시4번](https://github.com/catmaker/Tooltip/assets/114233139/f8ce5095-d1e4-4140-aa8e-18e97399ebe2)
+###### 툴팁의 내용은 string, number, icon, icon & string 등 여러가지 형태의 데이터를 받아 표현 할 수 있습니다.
+#
+![동작예시5번](https://github.com/catmaker/Tooltip/assets/114233139/8280b66c-4ce6-4d93-884e-8ccc9a2423bc)
+###### 다양한 props를 받을 수 있게 설정해두어 다양한 커스텀이 가능합니다.
+#
+![동작예시6번](https://github.com/catmaker/Tooltip/assets/114233139/3b7098e4-4bc6-42aa-871c-872f33dcddc7)
+###### 툴팁을 disabled props를 이용하여 안보이게 설정할 수 있습니다.
+
