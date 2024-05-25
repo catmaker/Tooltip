@@ -341,7 +341,7 @@ const TOOLTIP_DATA = {
 
 export default TOOLTIP_DATA;
 ```
-
+#
 ### 툴팁 컴포넌트 동작 예시
 ![동작예시1번](https://github.com/catmaker/Tooltip/assets/114233139/12f4dfc6-cf56-4f98-8b9e-fe62d5277fdf)
 ###### 툴팁 컴포넌트에 마우스 오버 시 툴팁이 등장 하고 마우스 아웃 시 툴팁이 기본적으로 사라집니다.
@@ -362,5 +362,5 @@ export default TOOLTIP_DATA;
 ###### 다양한 props를 받을 수 있게 설정해두어 다양한 커스텀이 가능합니다.
 #
 ![동작예시6번](https://github.com/catmaker/Tooltip/assets/114233139/3b7098e4-4bc6-42aa-871c-872f33dcddc7)
-###### 툴팁을 disabled props를 이용하여 안보이게 설정할 수 있습니다.
+###### 툴팁을 disabled props를 이용하여 툴팁을 안보이게 설정할 수 있습니다.
 
