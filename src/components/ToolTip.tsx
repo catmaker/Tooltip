@@ -8,23 +8,31 @@ prompt text
 prompt text`,
   children = "children props is required",
   direction,
-  color,
+  color = "#1A2735",
   enterDelay = 0,
   leaveDelay = 1,
   disabled = false,
   textColor = "white",
-  width = "auto",
-  height = "auto",
+  display = "flex",
+  width,
+  height,
+  margin,
+  padding = "5px",
   tooltipTextColor = "white",
   tooltipWidth = "auto",
   tooltipHeight = "auto",
-  borderRadius = "0",
+  borderRadius,
   tooltipBackgroundColor = "#1A2735",
-  tooltipBoxShadow,
+  tooltipFontSize = "14px",
+  tooltipFlexDirection = "column",
+  tooltipBoxShadow = "0",
+  boxShadow = "0",
   tooltipPadding = "5px",
   aniBorderColor,
   aniTextColor,
+  aniBackgroundColor,
   hoverLeave = false,
+  cursor = "pointer",
 }: Props) => {
   const [visible, setVisible] = useState(false);
   const [tooltipStyle, setTooltipStyle] = useState<React.CSSProperties>({});
@@ -208,9 +216,15 @@ prompt text`,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        width: width,
+        width: width || "max-content",
         borderRadius: borderRadius,
         height: height,
+        boxSizing: "border-box",
+        boxShadow: boxShadow,
+        margin: margin
+          ? `${margin.top} ${margin.right} ${margin.bottom} ${margin.left}`
+          : "0",
+        cursor: cursor,
       }}
     >
       {React.Children.map(children, (child) =>
@@ -219,34 +233,49 @@ prompt text`,
             ...child.props,
             className: "tooltip-button",
             style: {
-              display: "flex",
+              display: display,
               alignItems: "center",
               justifyContent: "center",
               ...child.props.style,
               color: textColor,
-              width: width,
+              width: width || "100%",
+              whiteSpace: "nowrap",
               height: height,
-              cursor: "pointer",
-              ["--border-color"]: aniBorderColor,
-              ["--color"]: aniTextColor,
+              backgroundColor: color,
+              borderRadius: borderRadius,
+              boxSizing: "border-box",
+              ["--border-color" as any]: aniBorderColor,
+              ["--color" as any]: aniTextColor,
+              ["--background-color" as any]: aniBackgroundColor,
             },
           })
         ) : (
           <div
             className="tooltip-button"
-            style={{
-              backgroundColor: color,
-              color: textColor,
-              width: width,
-              whiteSpace: "nowrap",
-              height: height,
-              borderColor: aniBorderColor,
-            }}
+            style={
+              {
+                display: display,
+                alignItems: "center",
+                justifyContent: "center",
+                color: textColor,
+                height: height,
+                width: width || "100%",
+                whiteSpace: "nowrap",
+                backgroundColor: color,
+                borderRadius: borderRadius,
+                boxSizing: "border-box",
+                ["--border-color" as any]: aniBorderColor,
+                ["--color" as any]: aniTextColor,
+                ["--background-color" as any]: aniBackgroundColor,
+                padding: padding,
+              } as React.CSSProperties
+            }
           >
             {child}
           </div>
         )
       )}
+
       {visible && !disabled && (
         <div
           ref={tooltipRef}
@@ -264,11 +293,12 @@ prompt text`,
             zIndex: 9999,
             width: tooltipWidth,
             height: tooltipHeight,
-            display: "flex",
+            display: display,
             alignItems: "center",
             justifyContent: "center",
-            flexDirection: "column",
-            boxShadow: `${tooltipBoxShadow}px ${tooltipBoxShadow}px ${tooltipBoxShadow}px rgba(0, 0, 0, 0.2)`,
+            flexDirection: tooltipFlexDirection,
+            fontSize: tooltipFontSize,
+            boxShadow: tooltipBoxShadow,
           }}
         >
           {message}
