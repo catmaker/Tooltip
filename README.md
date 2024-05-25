@@ -4,7 +4,7 @@
 
 ###### ToolTip 컴포넌트는 React로 구현된 커스터마이즈 가능한 툴팁 컴포넌트입니다.
 
-###### 이 문서는 컴포넌트의 구조, 속성, 그리고 사용 방법을 설명합니다.
+###### 이 문서는 컴포넌트의 기능, 구조, 속성, 그리고 사용 방법을 설명합니다.
 
 ### 설치 및 시작
 
@@ -15,8 +15,8 @@
 #
 
 ```
-git clone https://github.com/your-repo/your-project.git
-cd your-project
+git clone https://github.com/catmaker/Tooltip.git
+cd `해당 폴더 주소`
 npm install
 ```
 
@@ -40,11 +40,32 @@ npm start
 
 ###### `ToolTip` 컴포넌트를 import 하고, 자식 요소를 포함하여 사용합니다.
 
+##### 폴더 구조
+
+```css
+project/
+│
+├── src/
+│   ├── components/
+│   │   ├── ToolTip/
+│   │   │   ├── ToolTip.tsx
+│   │   │   └── ToolTip.css
+│   ├── data/
+│   │   └── tooltipConfig.tsx
+│   ├── types/
+│   │   └── tooltip.ts
+│   ├── App.css
+│   ├── App.tsx
+│   ├── index.tsx
+│   └── Main.tsx
+└── package.json
+```
+
 #
 
-```
-import React from 'react';
-import ToolTip from './ToolTip';
+```tsx
+import React from "react";
+import ToolTip from "./ToolTip";
 
 const App = () => {
   return (
@@ -102,6 +123,60 @@ export default App;
 | hoverLeave             | boolean   | false                                    | 툴팁 위로 마우스를 올릴 때 툴팁이 사라지는 것을 방지할지 여부 |
 | cursor                 | string    | pointer                                  | 툴팁 트리거 요소의 커서 스타일                                |
 
+```ts
+export type Props = {
+  message?: React.ReactNode;
+  children?: React.ReactNode;
+  direction?:
+    | "left"
+    | "right"
+    | "bottom"
+    | "topLeft"
+    | "topRight"
+    | "bottomLeft"
+    | "bottomRight"
+    | "leftTop"
+    | "leftBottom"
+    | "rightTop"
+    | "rightBottom"
+    | "top";
+  color?: string;
+  enterDelay?: number;
+  leaveDelay?: number;
+  buttonBackgroundColor?: string;
+  disabled?: boolean;
+  textColor?: string;
+  width?: string;
+  height?: string;
+  tooltipTextColor?: string;
+  tooltipWidth?: string;
+  tooltipHeight?: string;
+  tooltipBackgroundColor?: string;
+  tooltipFontSize?: string;
+  tooltipFlexDirection?: FlexDirection;
+  tooltipBoxShadow?: string;
+  borderRadius?: string;
+  boxShadow?: string;
+  tooltipPadding?: string;
+  aniBorderColor?: string;
+  aniTextColor?: string;
+  aniBackgroundColor?: string;
+  hoverLeave?: boolean;
+  padding?: string;
+  margin?: Margin;
+  display?: string;
+  cursor?: string;
+};
+
+type Margin = {
+  top: string;
+  right: string;
+  bottom: string;
+  left: string;
+};
+type FlexDirection = "row" | "row-reverse" | "column" | "column-reverse";
+```
+
 ### 스타일링
 
 #### CSS 클래스
@@ -116,7 +191,7 @@ export default App;
 
 #### 예시 CSS
 
-```
+```css
 .tooltip-wrapper {
   position: relative;
 }
@@ -140,7 +215,7 @@ export default App;
 .arrow-down::after,
 .arrow-left::after,
 .arrow-right::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 0;
@@ -178,5 +253,93 @@ export default App;
   top: 50%;
   transform: translateY(-50%);
 }
-
 ```
+
+### 주요 기능
+
+- ##### 마우스 이벤트 처리
+  - `handleMouseOver` 및 `handleMouseOut` 함수를 사용합니다.
+  - 마우스가 요소 위로 이동할 때 툴팁을 활성화합니다.
+  - 마우스가 요소를 벗어날 때 툴팁을 비활성화합니다.
+  - 이러한 이벤트 처리를 통해, 사용자는 요소 위에 마우스를 가져가면 툴팁을 표시할 수 있습니다.
+- ##### 툴팁의 위치 설정
+  - `getTooltipStyle` 함수를 사용하여 툴팁이 표시될 위치를 설정합니다.
+  - 툴팁의 방향을 설정하고, 해당 방향에 따라 툴팁의 위치를 계산합니다.
+- ##### 툴팁 스타일링
+
+  - CSS 속성을 사용하여 툴팁의 스타일을 지정합니다.
+  - 배경색, 텍스트 색상, 폰트 크기 등을 사용자 정의할 수 있습니다.
+
+- ##### 지연 설정
+
+  - `enterDelay` 및 `leaveDelay`를 사용하여 마우스 오버 및 아웃 후 툴팁이 표시되는 지연 시간을 설정할 수 있습니다.
+
+- ##### 툴팁 컴포넌트 설정
+
+  - `ToolTip` 컴포넌트의 `Props`를 통해 사용자 정의 가능한 여러 옵션을 설정할 수 있습니다.
+  - 이를 통해 툴팁의 모양, 색상, 크기 등을 조정할 수 있습니다.
+
+- ##### 사용 예제
+  - `Main` 컴포넌트에서 다양한 방향과 스타일의 툴팁을 렌더링하여 사용 예제를 제공합니다.
+
+### ProtoType
+
+```tsx
+import React from "react";
+import ToolTip from "./ToolTip";
+
+const App = () => {
+  return (
+    <div>
+      <ToolTip />
+    </div>
+  );
+};
+
+export default App;
+```
+
+![prototype](https://github.com/catmaker/Tooltip/assets/114233139/6d2f3e76-929b-4eb3-8da2-e37e0d591645)
+
+### 예시 데이터
+
+##### 이 프로젝트에서 사용할 수 있는 예시 데이터를 제공합니다.
+
+##### `TOOLTIP_DATA`
+
+###### 툴팁 컴포넌트에 적용할 수 있는 다양한 스타일 및 설정을 포함한 예시 데이터입니다.
+
+###### --> src/data/tooltipConfig.tsx에 위치
+
+```tsx
+const TOOLTIP_DATA = {
+  top: [
+    // 위 방향 툴팁 예시 데이터들...
+  ],
+  left: [
+    // 왼쪽 방향 툴팁 예시 데이터들...
+  ],
+  right: [
+    // 오른쪽 방향 툴팁 예시 데이터들...
+  ],
+  bottom: [
+    // 아래 방향 툴팁 예시 데이터들...
+  ],
+  demo2: [
+    // 데모2 예시 데이터들...
+  ],
+  demoBlock: [
+    // 데모 블록 예시 데이터들...
+  ],
+  custom: [
+    // 커스텀 툴팁 예시 데이터들...
+  ],
+  disable: [
+    // 비활성화된 툴팁 예시 데이터들...
+  ],
+};
+
+export default TOOLTIP_DATA;
+```
+
+###
