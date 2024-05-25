@@ -1,38 +1,115 @@
+html {
+  background-color: #f3f7fa;
+}
 .App {
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  font-size: 14px;
+}
+.parent-overflow {
+  overflow: scroll;
+  height: 80px;
+  margin-left: 40px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.section {
+  height: 100vh;
+  padding: 0px 200px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.demo {
+  display: flex;
+  margin-top: 100px;
+  margin-left: 100px;
+  gap: 4px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.demo2 {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  margin-top: 50px;
+  margin-left: 200px;
+}
+.demoBlock {
+  margin-top: 100px;
+  margin-left: 150px;
+}
+.top-wrapper {
+  display: flex;
+  gap: 4px;
+  width: 290px;
+  height: 25px;
+  margin-left: 70px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.left-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  float: left;
+}
+.right-wrapper {
+  display: flex;
+  margin-left: 200px;
+  flex-direction: column;
+  float: right;
+  gap: 4px;
+}
+.bottom-wrapper {
+  margin-left: 70px;
+  clear: both;
+  display: flex;
+  width: 290px;
+  gap: 4px;
+}
+.wrapper > div:nth-child(1) {
+  margin-left: 70px;
+}
+.wrapper > div:nth-child(1) > div {
+  display: flex;
+  gap: 4px;
+}
+.wrapper > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  float: left;
+}
+.wrapper > div:nth-child(3) {
+  display: flex;
+  margin-left: 140px;
+  flex-direction: column;
+  gap: 4px;
+}
+.wrapper > div:nth-child(4) {
+  margin-left: 70px;
+  display: flex;
+  gap: 4px;
+}
+.custom-tooltip {
+  display: flex;
+  gap: 4px;
+}
+.disable {
+  display: flex;
+  gap: 10px;
+}
+.disable > :nth-child(2) > :nth-child(1) {
+  background-color: #e8e5e5 !important;
+  color: black !important;
+  transition: none !important;
+  border-radius: 10px;
+  padding: 3px;
+}
+.disable > :nth-child(2) > :nth-child(1):before {
+  background-color: #e8e5e5 !important;
+  color: black !important;
+}
+.disable > :nth-child(2) > :nth-child(1):after {
+  background-color: #e8e5e5 !important;
+  color: black !important;
+}
+.disable > button {
+  background-color: #333333;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border-radius: 5px;
 }

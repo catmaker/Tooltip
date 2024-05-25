@@ -1,0 +1,177 @@
+button {
+  border: none;
+}
+.tooltip {
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.tooltip-button {
+  transition: background-color 0.5s, color 0.5s; /* 배경색과 텍스트 색상을 1초에 걸쳐 변환 */
+}
+
+.tooltip-button:hover {
+  background-color: white;
+  color: var(--color, #1aaa89) !important;
+}
+.tooltip-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.tooltip-button::before,
+.tooltip-button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px; /* border 두께 */
+  background: var(--border-color, #1aaa89);
+  transition: transform 1s;
+}
+
+.tooltip-button::before {
+  top: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.tooltip-button::after {
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.tooltip-button:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.tooltip-button:hover::after {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+.tooltip.arrow-right::after {
+  content: "";
+  position: absolute;
+  left: calc(100%);
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-left-color: var(--tooltipColor);
+  transform: translateY(-50%);
+}
+.tooltip.arrow-left::after {
+  content: "";
+  position: absolute;
+  right: calc(100%);
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-right-color: var(--tooltipColor);
+  transform: translateY(-50%);
+}
+.tooltip.arrow-up::after {
+  content: "";
+  position: absolute;
+  bottom: calc(100%);
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-bottom-color: var(--tooltipColor);
+  transform: translateX(-50%);
+}
+.tooltip.arrow-down::after {
+  content: "";
+  position: absolute;
+  top: calc(100%);
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top-color: var(--tooltipColor);
+  transform: translateX(-50%);
+}
+.tooltip.arrow-bottom-right::after {
+  content: "";
+  position: absolute;
+  top: calc(100% - 6px);
+  left: 5px;
+  width: 9px;
+  height: 9px;
+  background-color: var(--tooltipColor);
+  border-radius: 2px;
+  transform: rotate(45deg); /* 꼬리를 대각선으로 회전시킵니다 */
+  z-index: -1;
+}
+.tooltip.arrow-bottom-left::after {
+  content: "";
+  position: absolute;
+  top: calc(100%);
+  right: 5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--tooltipColor) transparent transparent transparent;
+}
+
+.tooltip.arrow-top-right::after {
+  content: "";
+  position: absolute;
+  bottom: calc(100%);
+  left: 5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent var(--tooltipColor) transparent;
+}
+
+.tooltip.arrow-top-left::after {
+  content: "";
+  position: absolute;
+  bottom: calc(100%);
+  right: 5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent var(--tooltipColor) transparent;
+}
+
+.tooltip.arrow-right-bottom::after {
+  content: "";
+  position: absolute;
+  left: calc(100%);
+  top: 5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--tooltipColor);
+}
+
+.tooltip.arrow-right-top::after {
+  content: "";
+  position: absolute;
+  left: calc(100%);
+  bottom: 5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--tooltipColor);
+}
+
+.tooltip.arrow-left-bottom::after {
+  content: "";
+  position: absolute;
+  right: calc(100%);
+  top: 5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent var(--tooltipColor) transparent transparent;
+}
+
+.tooltip.arrow-left-top::after {
+  content: "";
+  position: absolute;
+  right: calc(100%);
+  bottom: 5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent var(--tooltipColor) transparent transparent;
+}
