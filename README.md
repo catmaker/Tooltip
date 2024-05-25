@@ -192,66 +192,49 @@ type FlexDirection = "row" | "row-reverse" | "column" | "column-reverse";
 #### 예시 CSS
 
 ```css
-.tooltip-wrapper {
-  position: relative;
-}
-
-.tooltip-button {
-  cursor: pointer;
-}
-
-.tooltip {
-  position: absolute;
-  z-index: 9999;
-  background-color: var(--tooltipColor);
-  color: white;
-  padding: 5px;
-  border-radius: 4px;
-  white-space: pre-wrap;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.arrow-up::after,
-.arrow-down::after,
-.arrow-left::after,
-.arrow-right::after {
+.tooltip.arrow-right::after {
   content: "";
   position: absolute;
+  left: calc(100%);
+  top: 50%;
   width: 0;
   height: 0;
-  border-style: solid;
-}
-
-.arrow-up::after {
-  border-width: 0 5px 5px 5px;
-  border-color: transparent transparent var(--tooltipColor) transparent;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.arrow-down::after {
-  border-width: 5px 5px 0 5px;
-  border-color: var(--tooltipColor) transparent transparent transparent;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.arrow-left::after {
-  border-width: 5px 5px 5px 0;
-  border-color: transparent var(--tooltipColor) transparent transparent;
-  left: 100%;
-  top: 50%;
+  border: 5px solid transparent;
+  border-left-color: var(--tooltipColor);
   transform: translateY(-50%);
 }
-
-.arrow-right::after {
-  border-width: 5px 0 5px 5px;
-  border-color: transparent transparent transparent var(--tooltipColor);
-  right: 100%;
+.tooltip.arrow-left::after {
+  content: "";
+  position: absolute;
+  right: calc(100%);
   top: 50%;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-right-color: var(--tooltipColor);
   transform: translateY(-50%);
+}
+.tooltip.arrow-up::after {
+  content: "";
+  position: absolute;
+  bottom: calc(100%);
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-bottom-color: var(--tooltipColor);
+  transform: translateX(-50%);
+}
+.tooltip.arrow-down::after {
+  content: "";
+  position: absolute;
+  top: calc(100%);
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top-color: var(--tooltipColor);
+  transform: translateX(-50%);
 }
 ```
 
