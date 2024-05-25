@@ -8,7 +8,9 @@ const TOOLTIP_DATA = {
       width: "70px",
       height: "21px",
       borderRadius: "5px",
-      tooltipTextColor: "white",
+      aniTextColor: "#1AAA89",
+      aniBackgroundColor: "white",
+      aniBorderColor: "#1AAA89",
     },
     {
       direction: "top",
@@ -18,7 +20,9 @@ const TOOLTIP_DATA = {
       width: "70px",
       height: "21px",
       borderRadius: "5px",
-      tooltipTextColor: "white",
+      aniTextColor: "#1AAA89",
+      aniBackgroundColor: "white",
+      aniBorderColor: "#1AAA89",
     },
     {
       direction: "topRight",
@@ -28,7 +32,9 @@ const TOOLTIP_DATA = {
       width: "70px",
       height: "21px",
       borderRadius: "5px",
-      tooltipTextColor: "white",
+      aniTextColor: "#1AAA89",
+      aniBackgroundColor: "white",
+      aniBorderColor: "#1AAA89",
     },
   ],
   left: [
@@ -40,7 +46,9 @@ const TOOLTIP_DATA = {
       width: "70px",
       height: "21px",
       borderRadius: "5px",
-      tooltipTextColor: "white",
+      aniTextColor: "#1AAA89",
+      aniBackgroundColor: "white",
+      aniBorderColor: "#1AAA89",
     },
     {
       direction: "left",
@@ -50,7 +58,9 @@ const TOOLTIP_DATA = {
       width: "70px",
       height: "21px",
       borderRadius: "5px",
-      tooltipTextColor: "white",
+      aniTextColor: "#1AAA89",
+      aniBackgroundColor: "white",
+      aniBorderColor: "#1AAA89",
     },
     {
       direction: "leftBottom",
@@ -60,7 +70,9 @@ const TOOLTIP_DATA = {
       width: "70px",
       height: "21px",
       borderRadius: "5px",
-      tooltipTextColor: "white",
+      aniTextColor: "#1AAA89",
+      aniBackgroundColor: "white",
+      aniBorderColor: "#1AAA89",
     },
   ],
   right: [
@@ -72,7 +84,9 @@ const TOOLTIP_DATA = {
       width: "70px",
       height: "21px",
       borderRadius: "5px",
-      tooltipTextColor: "white",
+      aniTextColor: "#1AAA89",
+      aniBackgroundColor: "white",
+      aniBorderColor: "#1AAA89",
     },
     {
       direction: "right",
@@ -82,7 +96,9 @@ const TOOLTIP_DATA = {
       width: "70px",
       height: "21px",
       borderRadius: "5px",
-      tooltipTextColor: "white",
+      aniTextColor: "#1AAA89",
+      aniBackgroundColor: "white",
+      aniBorderColor: "#1AAA89",
     },
     {
       direction: "rightBottom",
@@ -92,7 +108,9 @@ const TOOLTIP_DATA = {
       width: "70px",
       height: "21px",
       borderRadius: "5px",
-      tooltipTextColor: "white",
+      aniTextColor: "#1AAA89",
+      aniBackgroundColor: "white",
+      aniBorderColor: "#1AAA89",
     },
   ],
   bottom: [
@@ -104,7 +122,9 @@ const TOOLTIP_DATA = {
       width: "70px",
       height: "21px",
       borderRadius: "5px",
-      tooltipTextColor: "white",
+      aniTextColor: "#1AAA89",
+      aniBackgroundColor: "white",
+      aniBorderColor: "#1AAA89",
     },
     {
       direction: "bottom",
@@ -114,7 +134,9 @@ const TOOLTIP_DATA = {
       width: "70px",
       height: "21px",
       borderRadius: "5px",
-      tooltipTextColor: "white",
+      aniTextColor: "#1AAA89",
+      aniBackgroundColor: "white",
+      aniBorderColor: "#1AAA89",
     },
     {
       direction: "bottomRight",
@@ -124,7 +146,9 @@ const TOOLTIP_DATA = {
       width: "70px",
       height: "21px",
       borderRadius: "5px",
-      tooltipTextColor: "white",
+      aniTextColor: "#1AAA89",
+      aniBackgroundColor: "white",
+      aniBorderColor: "#1AAA89",
     },
   ],
   demo2: [
@@ -136,7 +160,9 @@ const TOOLTIP_DATA = {
       width: "150px",
       height: "21px",
       borderRadius: "5px",
-      tooltipTextColor: "white",
+      aniTextColor: "#1AAA89",
+      aniBackgroundColor: "white",
+      aniBorderColor: "#1AAA89",
       enterDelay: 1000,
     },
     {
@@ -147,7 +173,9 @@ const TOOLTIP_DATA = {
       width: "150px",
       height: "21px",
       borderRadius: "5px",
-      tooltipTextColor: "white",
+      aniTextColor: "#1AAA89",
+      aniBackgroundColor: "white",
+      aniBorderColor: "#1AAA89",
       leaveDelay: 1000,
     },
     {
@@ -158,7 +186,9 @@ const TOOLTIP_DATA = {
       width: "150px",
       height: "21px",
       borderRadius: "5px",
-      tooltipTextColor: "white",
+      aniTextColor: "#1AAA89",
+      aniBackgroundColor: "white",
+      aniBorderColor: "#1AAA89",
       hoverLeave: true,
     },
   ],
@@ -209,6 +239,10 @@ const TOOLTIP_DATA = {
       tooltipPadding: "10px",
       direction: "top",
       hoverLeave: true,
+      aniTextColor: "#1AAA89",
+      aniBackgroundColor: "white",
+      aniBorderColor: "#1AAA89",
+      margin: { top: "0px", right: "0px", bottom: "0px", left: "70px" },
     },
     {
       message: (
@@ -255,6 +289,9 @@ const TOOLTIP_DATA = {
       tooltipBoxShadow: "5",
       tooltipPadding: "10px",
       hoverLeave: true,
+      aniTextColor: "#1AAA89",
+      aniBackgroundColor: "white",
+      aniBorderColor: "#1AAA89",
     },
     {
       message: (
@@ -301,6 +338,10 @@ const TOOLTIP_DATA = {
       tooltipBoxShadow: "5",
       tooltipPadding: "10px",
       hoverLeave: true,
+      aniTextColor: "#1AAA89",
+      aniBackgroundColor: "white",
+      aniBorderColor: "#1AAA89",
+      margin: { top: "0px", right: "0px", bottom: "0px", left: "140px" },
     },
     {
       message: (
@@ -352,6 +393,10 @@ const TOOLTIP_DATA = {
       tooltipBoxShadow: 5,
       tooltipPadding: "10px",
       hoverLeave: true,
+      aniTextColor: "#1AAA89",
+      aniBackgroundColor: "white",
+      aniBorderColor: "#1AAA89",
+      margin: { top: "0px", right: "0px", bottom: "0px", left: "70px" },
     },
   ],
   custom: [
@@ -368,6 +413,7 @@ const TOOLTIP_DATA = {
       tooltipBackgroundColor: "#fac",
       aniBorderColor: "#fac",
       aniTextColor: "#fac",
+      aniBackgroundColor: "white",
     },
     {
       direction: "top",
@@ -382,6 +428,7 @@ const TOOLTIP_DATA = {
       tooltipBackgroundColor: "#fff1aa",
       aniBorderColor: "#fff1aa",
       aniTextColor: "#fff1aa",
+      aniBackgroundColor: "white",
     },
   ],
   disable: [
