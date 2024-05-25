@@ -15,7 +15,6 @@ export type Props = {
     | "rightBottom"
     | "top";
   color?: string;
-  delay?: number;
   enterDelay?: number;
   leaveDelay?: number;
   buttonBackgroundColor?: string;
@@ -27,10 +26,26 @@ export type Props = {
   tooltipWidth?: string;
   tooltipHeight?: string;
   tooltipBackgroundColor?: string;
-  borderRadius?: string;
+  tooltipFontSize?: string;
+  tooltipFlexDirection?: FlexDirection;
   tooltipBoxShadow?: string;
+  borderRadius?: string;
+  boxShadow?: string;
   tooltipPadding?: string;
   aniBorderColor?: string;
   aniTextColor?: string;
+  aniBackgroundColor?: string;
   hoverLeave?: boolean;
+  padding?: string;
+  margin?: Margin;
+  display?: string;
+  cursor?: string;
 };
+
+type Margin = {
+  top: string;
+  right: string;
+  bottom: string;
+  left: string;
+};
+type FlexDirection = "row" | "row-reverse" | "column" | "column-reverse";
