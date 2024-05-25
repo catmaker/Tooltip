@@ -21,26 +21,40 @@ const Main = () => {
   };
   const renderTooltip = (tooltip: Props) => (
     <ToolTip
+      // 기본 설정 및 메시지 관련
       message={tooltip.message}
       direction={tooltip.direction}
       color={tooltip.color}
       disabled={tooltip.disabled}
-      textColor={tooltip.textColor}
+      // 크기 및 모양 관련
       width={tooltip.width}
       height={tooltip.height}
       borderRadius={tooltip.borderRadius}
+      boxShadow={tooltip.boxShadow}
+      padding={tooltip.padding}
+      margin={tooltip.margin}
+      // 텍스트 관련
+      textColor={tooltip.textColor}
       tooltipTextColor={tooltip.tooltipTextColor}
+      // 배경 관련
+      buttonBackgroundColor={tooltip.buttonBackgroundColor}
+      tooltipBackgroundColor={tooltip.tooltipBackgroundColor}
+      // 툴팁 상세 설정
       tooltipWidth={tooltip.tooltipWidth}
       tooltipHeight={tooltip.tooltipHeight}
-      tooltipBackgroundColor={tooltip.tooltipBackgroundColor}
-      delay={tooltip.delay}
+      tooltipPadding={tooltip.tooltipPadding}
+      tooltipFlexDirection={tooltip.tooltipFlexDirection}
+      tooltipBoxShadow={tooltip.tooltipBoxShadow}
+      // 애니메이션 및 상호작용 관련
       enterDelay={tooltip.enterDelay}
       leaveDelay={tooltip.leaveDelay}
-      tooltipBoxShadow={tooltip.tooltipBoxShadow}
-      tooltipPadding={tooltip.tooltipPadding}
-      aniBorderColor={tooltip.aniBorderColor}
-      aniTextColor={tooltip.aniTextColor}
       hoverLeave={tooltip.hoverLeave}
+      aniTextColor={tooltip.aniTextColor}
+      aniBackgroundColor={tooltip.aniBackgroundColor}
+      aniBorderColor={tooltip.aniBorderColor}
+      // 기타 스타일링
+      display={tooltip.display}
+      cursor={tooltip.cursor}
     >
       {tooltip.children}
     </ToolTip>
@@ -129,6 +143,7 @@ const Main = () => {
         </div>
         <div></div>
       </div>
+      <ToolTip></ToolTip>
     </div>
   );
 };
