@@ -16,7 +16,7 @@
 
 ```
 git clone https://github.com/catmaker/Tooltip.git
-cd `해당 폴더 주소`
+cd Tooltip
 npm install
 ```
 
