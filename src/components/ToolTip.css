@@ -1,19 +1,21 @@
 button {
   border: none;
 }
+
 .tooltip {
   border-radius: 4px;
   font-size: 12px;
 }
 
 .tooltip-button {
-  transition: background-color 0.5s, color 0.5s; /* 배경색과 텍스트 색상을 1초에 걸쳐 변환 */
+  transition: background-color 1s, color 0.3s;
 }
 
 .tooltip-button:hover {
-  background-color: white;
+  background-color: var(--background-color) !important;
   color: var(--color, #1aaa89) !important;
 }
+
 .tooltip-button {
   position: relative;
   overflow: hidden;
@@ -24,9 +26,9 @@ button {
   content: "";
   position: absolute;
   width: 100%;
-  height: 2px; /* border 두께 */
+  height: 2px;
   background: var(--border-color, #1aaa89);
-  transition: transform 1s;
+  transition: transform 0.5s;
 }
 
 .tooltip-button::before {
@@ -103,7 +105,7 @@ button {
   height: 9px;
   background-color: var(--tooltipColor);
   border-radius: 2px;
-  transform: rotate(45deg); /* 꼬리를 대각선으로 회전시킵니다 */
+  transform: rotate(45deg);
   z-index: -1;
 }
 .tooltip.arrow-bottom-left::after {
